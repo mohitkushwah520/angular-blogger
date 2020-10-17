@@ -1,0 +1,16 @@
+<div class="right-widget recent-post">
+  <h3>Recent Blogs</h3>
+  <div *ngFor="let rblog of recentblog">
+  <a [routerLink]="['/blog/'+ rblog.id]">
+      <div class="rb-box">
+          <div class="rb-box-img">
+              <img src={{rblog.image}} alt="blog1" />
+          </div>
+          <div class="rb-box-desc">
+              <h4>{{rblog.title}}</h4>
+              <p>{{rblog.created_at}}</p>
+          </div>
+      </div>
+  </a>
+</div>
+  </div>

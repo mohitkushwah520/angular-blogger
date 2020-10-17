@@ -1,0 +1,16 @@
+<section class="blog-list mtb-40">
+  <div class="container">
+    <h1>{{title}}</h1>
+    <div class="row">
+      <div class="col-md-4" *ngFor="let blogs of blogdata">
+        <div class="blog-box">
+          <img src={{blogs.image}} alt="blog1" />
+          <h3>{{blogs.title}}</h3>
+          <p>by <span>{{blogs.author}}</span> on <span>{{blogs.created_at}}</span></p>
+          <p>{{blogs.short_desc}}</p>
+          <a [routerLink]="['/blog', blogs.id]" class="btn btn-danger">Read more...</a>
+        </div>
+      </div> <!--col-4-->
+    </div>
+  </div>
+</section>

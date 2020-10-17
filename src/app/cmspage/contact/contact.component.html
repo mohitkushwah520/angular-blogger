@@ -1,0 +1,30 @@
+<section class="cmspage mtb-40">
+  <div class="container">
+    <div class="page-desc">
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <h1>Contact</h1>
+          <form #contact="ngForm" (ngSubmit)="onSubmit()" *ngIf="!submit">
+            <div class="form-group">
+              <input type="text" required placeholder="Name" #name="ngModel" class="form-control" name="name" [(ngModel)]="modal.name" [class.is-invalid]="name.touched && name.invalid">
+            </div>
+            <div class="form-group">
+              <input type="text" required placeholder="Email" #email="ngModel" class="form-control" name="email" [(ngModel)]="modal.email" [class.is-invalid]="email.touched && email.invalid">
+            </div>
+            <div class="form-group">
+              <input type="text" required placeholder="Phone" #phone="ngModel" class="form-control" name="phone" [(ngModel)]="modal.phone" [class.is-invalid]="phone.touched && phone.invalid">
+            </div>
+            <div class="form-group">
+              <textarea name="message" required placeholder="Message" #message="ngModel" cols="30" rows="10" class="form-control" [(ngModel)]="modal.message" [class.is-invalid]="message.touched && message.invalid"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" [disabled]="contact.invalid">Submit</button>
+          </form>
+          <div class="gotohome text-center" *ngIf="submit">
+            <h1 class="text-center">Thank You! Form Sucessfuly Submited</h1>
+            <button class="btn btn-danger" (click)="goToHome()">Go To Home Page</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
